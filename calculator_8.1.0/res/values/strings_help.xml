@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help">
+"Smartisan Calc-Mod Help
+=======================
+
+Pasted contents are case-insensitive.
+
+Alternate Inputs
+-----------------------
+
+Long-text buttons can be enclosed by
+\"[]\" or a pair of \"\\\".
+
+[mc]:     mc
+[m+]:     m+
+[m-]:     m-
+[mr]:     mr, m
+[AC]:     ac, a
+[Del]:    del, de, d
+[+/-],    [(-)]: [+], [-], [neg], neg, ne, n, ±
+[x-1]:    [x-], [-1]
+[x2]:     [2], ² (superscript 2)
+[x3]:     [3], ³ (superscript 3)
+[xy]:     [y], ^
+[x!]:     [!]
+√:        [sqrt], [sqr], s
+[x√y]:    [xrooty], [root], [xry], [√], r
+[log]:    [l], log
+[sin]:    sin
+[cos]:    cos
+[tan]:    tan
+[ln]:     ln
+[ex]:     [e^], e
+π:        [pi], pi, p
+[sin-1]:  [sin-], [arcsin]
+[cos-1]:  [cos-], [arccos]
+[tan-1]:  [tan-], [arctan]
+[log2]:   [l2]
+[sinh-1]: [sinh-]
+[cosh-1]: [cosh-]
+[tanh-1]: [tanh-]
+[2x]:     [2^]
+
+Commands
+-----------------------
+
+!H:       Copy this help to clipboard.
+
+!L:       Landscape.
+!P:       Portrait.
+!R:       Rotate.
+!o:       Switch orientation, same as !R.
+
+!0:       Button muted.
+!1:       Button low volume.
+!2:       Button original volume.
+"
+</string>
+</resources>

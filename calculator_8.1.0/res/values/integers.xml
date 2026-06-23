@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="highlight_padding_right">30</integer>
+    <integer name="highlight_padding_top">16</integer>
+    <integer name="max_number_land">28</integer>
+    <integer name="max_number_port">12</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="controller_height">532.7969dp</dimen>
+    <dimen name="controller_margin_bottom">21.599976dp</dimen>
+    <dimen name="controller_padding_horizontal">6.399994dp</dimen>
+    <dimen name="display_input_view_margin_left">14.0dp</dimen>
+    <dimen name="top_marginTop">36.0dp</dimen>
+    <dimen name="typebox_height">197.0dp</dimen>
+    <dimen name="typebox_margin_left">14.399994dp</dimen>
+    <dimen name="typebox_margin_right">14.399994dp</dimen>
+</resources>

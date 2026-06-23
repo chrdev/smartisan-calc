@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="win_background" format="string">res/drawable-xxhdpi/win_background.jpg</item>
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/calculator_root" android:background="@drawable/cal_bg" android:paddingTop="@dimen/land_container_paddingTop" android:fitsSystemWindows="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/main_layout" android:background="@drawable/cal_bg" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <RelativeLayout android:id="@id/top" android:background="@drawable/typebox" android:layout_width="match_parent" android:layout_height="@dimen/typebox_height" android:layout_marginLeft="@dimen/typebox_margin_left" android:layout_marginTop="@dimen/top_marginTop" android:layout_marginRight="@dimen/typebox_margin_right">
+        <com.smartisanos.calculator.DisplayInputView android:id="@id/show_input" android:focusable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/display_input_view_margin_left" android:layout_marginRight="@dimen/display_view_marginRight" android:layout_marginBottom="6.0dp" android:layout_toRightOf="@id/rad_deg" android:layout_above="@id/show_result" android:layout_alignLeft="@id/show_result" />
+        <com.smartisanos.calculator.DisplayResultView android:id="@id/show_result" android:focusable="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/display_view_marginLeft" android:layout_marginRight="@dimen/display_view_marginRight" android:layout_marginBottom="14.0dp" android:layout_toRightOf="@id/rad_deg" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/rad_deg" android:background="@drawable/pic_deg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/display_view_marginLeft" android:layout_alignBottom="@id/show_result" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/keyboard_margin_left" android:layout_marginTop="@dimen/keyboard_margin_top" android:layout_marginRight="@dimen/keyboard_margin_right" android:layout_marginBottom="@dimen/keyboard_margin_bottom" android:layout_below="@id/top" android:layout_centerHorizontal="true">
+        <LinearLayout android:orientation="horizontal" style="@style/divide_height_equally">
+            <com.smartisanos.calculator.HammerButton android:id="@id/second" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/nd2" android:contentDescription="@string/cd_alternative_trigonometric_functions" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/leftparen" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/leftparen" android:contentDescription="@string/cd_left_parent" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/rightparen" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/rightparen" android:contentDescription="@string/cd_right_parent" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/mod" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/mod" android:contentDescription="@string/cd_percent" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/mc" android:background="@drawable/cal_selector_btn_black" android:src="@drawable/mc" android:contentDescription="@string/cd_memory_clear" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/madd" android:background="@drawable/cal_selector_btn_black" android:src="@drawable/madd" android:contentDescription="@string/cd_memory_add" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/mminus" android:background="@drawable/cal_selector_btn_black" android:src="@drawable/mminus" android:contentDescription="@string/cd_memory_subtract" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/mr" android:background="@drawable/cal_selector_btn_black" android:src="@drawable/mr" android:contentDescription="@string/cd_memory_recall" style="@style/divide_width_equally" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" style="@style/divide_height_equally">
+            <com.smartisanos.calculator.HammerButton android:id="@id/reci" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/reverse" android:contentDescription="@string/cd_reciprocal" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/x2" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/x2" android:contentDescription="@string/cd_square" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/x3" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/x3" android:contentDescription="@string/cd_cubed" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/yx" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/yx" android:contentDescription="@string/cd_power" style="@style/divide_width_equally" />
+            <FrameLayout style="@style/divide_width_equally">
+                <com.smartisanos.calculator.HammerButton android:id="@id/del" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/del" android:contentDescription="@string/cd_del" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/c" android:background="@drawable/cal_selector_btn_grey" android:visibility="invisible" android:src="@drawable/c" android:contentDescription="@string/cd_clear" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/ac" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/ac" android:contentDescription="@string/cd_ac" style="@style/match_parent" />
+            </FrameLayout>
+            <com.smartisanos.calculator.HammerButton android:id="@id/neg" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/addminus" android:contentDescription="@string/cd_plus_minus" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/div" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/div" android:contentDescription="@string/cd_divide" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/mul" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/multiply" android:contentDescription="@string/cd_multiply" style="@style/divide_width_equally" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" style="@style/divide_height_equally">
+            <com.smartisanos.calculator.HammerButton android:id="@id/fac" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/fib" android:contentDescription="@string/cd_factorial" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/sqrt" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/sqrt" android:contentDescription="@string/cd_square_root" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/x_sqrt_y" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/x_sqrt_y" android:contentDescription="@string/cd_root" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/log" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/log" android:contentDescription="@string/cd_log" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit7" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d7" android:contentDescription="@string/cd_d7" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit8" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d8" android:contentDescription="@string/cd_d8" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit9" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d9" android:contentDescription="@string/cd_d9" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/minus" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/minus" android:contentDescription="@string/cd_subtract" style="@style/divide_width_equally" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" style="@style/divide_height_equally">
+            <FrameLayout style="@style/divide_width_equally">
+                <com.smartisanos.calculator.HammerButton android:id="@id/sin" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/sin" android:contentDescription="@string/cd_sine" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/sin_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/sin_1" android:contentDescription="@string/cd_sine_reci" style="@style/match_parent" />
+            </FrameLayout>
+            <FrameLayout style="@style/divide_width_equally">
+                <com.smartisanos.calculator.HammerButton android:id="@id/cos" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/cos" android:contentDescription="@string/cd_cosine" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/cos_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/cos_1" android:contentDescription="@string/cd_cos_reci" style="@style/match_parent" />
+            </FrameLayout>
+            <FrameLayout style="@style/divide_width_equally">
+                <com.smartisanos.calculator.HammerButton android:id="@id/tan" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/tan" android:contentDescription="@string/cd_tangent" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/tan_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/tan_1" android:contentDescription="@string/cd_tan_reci" style="@style/match_parent" />
+            </FrameLayout>
+            <FrameLayout style="@style/divide_width_equally">
+                <com.smartisanos.calculator.HammerButton android:id="@id/ln" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/ln" android:contentDescription="@string/cd_natural_logarithm" style="@style/match_parent" />
+                <com.smartisanos.calculator.HammerButton android:id="@id/log2x" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/log2" android:contentDescription="@string/cd_log2x" style="@style/match_parent" />
+            </FrameLayout>
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit4" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d4" android:contentDescription="@string/cd_d4" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit5" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d5" android:contentDescription="@string/cd_d5" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/digit6" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d6" android:contentDescription="@string/cd_d6" style="@style/divide_width_equally" />
+            <com.smartisanos.calculator.HammerButton android:id="@id/add" android:background="@drawable/cal_selector_btn_grey" android:src="@drawable/add" android:contentDescription="@string/cd_add" style="@style/divide_width_equally" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_weight="2.0" style="@style/divide_height_equally">
+            <LinearLayout android:orientation="vertical" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="7.0">
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+                    <FrameLayout style="@style/divide_width_equally">
+                        <com.smartisanos.calculator.HammerButton android:id="@id/sinh" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/sinh" android:contentDescription="@string/cd_hyperbolic_sine" style="@style/match_parent" />
+                        <com.smartisanos.calculator.HammerButton android:id="@id/sinh_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/sinh_1" android:contentDescription="@string/cd_sinh_reci" style="@style/match_parent" />
+                    </FrameLayout>
+                    <FrameLayout style="@style/divide_width_equally_margin">
+                        <com.smartisanos.calculator.HammerButton android:id="@id/cosh" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/cosh" android:contentDescription="@string/cd_hyperbolic_cosine" style="@style/match_parent" />
+                        <com.smartisanos.calculator.HammerButton android:id="@id/cosh_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/cosh_1" android:contentDescription="@string/cd_cosh_reci" style="@style/match_parent" />
+                    </FrameLayout>
+                    <FrameLayout style="@style/divide_width_equally_margin">
+                        <com.smartisanos.calculator.HammerButton android:id="@id/tanh" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/tanh" android:contentDescription="@string/cd_hyperbolic_tangent" style="@style/match_parent" />
+                        <com.smartisanos.calculator.HammerButton android:id="@id/tanh_reci" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/tanh_1" android:contentDescription="@string/cd_tanh_reci" style="@style/match_parent" />
+                    </FrameLayout>
+                    <FrameLayout style="@style/divide_width_equally_margin">
+                        <com.smartisanos.calculator.HammerButton android:id="@id/ex" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/ex" android:contentDescription="@string/cd_exponential" style="@style/match_parent" />
+                        <com.smartisanos.calculator.HammerButton android:id="@id/twoc" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/two_x" android:contentDescription="@string/cd_two_x" style="@style/match_parent" />
+                    </FrameLayout>
+                    <com.smartisanos.calculator.HammerButton android:id="@id/digit1" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d1" android:contentDescription="@string/cd_d1" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/digit2" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d2" android:contentDescription="@string/cd_d2" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/digit3" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/d3" android:contentDescription="@string/cd_d3" style="@style/divide_width_equally_margin" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+                    <FrameLayout style="@style/divide_width_equally">
+                        <com.smartisanos.calculator.HammerButton android:id="@id/rad" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/rad" android:contentDescription="@string/cd_radian" style="@style/match_parent" />
+                        <com.smartisanos.calculator.HammerButton android:id="@id/deg" android:background="@drawable/cal_selector_btn_white" android:visibility="invisible" android:src="@drawable/deg" android:contentDescription="@string/cd_deg" style="@style/match_parent" />
+                    </FrameLayout>
+                    <com.smartisanos.calculator.HammerButton android:id="@id/pi" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/pi" android:contentDescription="@string/cd_pie" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/ee" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/ee" android:contentDescription="@string/cd_engineering_experiment" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/rand" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/rand" android:contentDescription="@string/cd_random" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/digit0" android:background="@drawable/selector_digit_0" android:src="@drawable/d0" android:layout_weight="2.0" android:contentDescription="@string/cd_d0" style="@style/divide_width_equally_margin" />
+                    <com.smartisanos.calculator.HammerButton android:id="@id/dot" android:background="@drawable/cal_selector_btn_white" android:src="@drawable/dot" android:contentDescription="@string/cd_dot" style="@style/divide_width_equally_margin" />
+                </LinearLayout>
+            </LinearLayout>
+            <com.smartisanos.calculator.HammerButton android:id="@id/equal" android:background="@drawable/selector_amount" android:layout_width="0.0dp" android:layout_height="match_parent" android:src="@drawable/amount" android:layout_weight="1.0" android:contentDescription="@string/cd_equals" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="@dimen/clipmenu_text_size" android:textColor="@color/clip_menu_text_color" android:gravity="center" android:id="@id/copy" android:background="@drawable/selector_copy" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@android:string/copy" android:layout_alignParentTop="true" />
+</RelativeLayout>

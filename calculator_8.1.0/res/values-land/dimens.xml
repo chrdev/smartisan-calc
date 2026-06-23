@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_margin_left">1.0dp</dimen>
+    <dimen name="equal_margin_top">7.0dp</dimen>
+    <dimen name="keyboard_margin_bottom">5.0dp</dimen>
+    <dimen name="keyboard_margin_left">9.0dp</dimen>
+    <dimen name="keyboard_margin_right">9.0dp</dimen>
+    <dimen name="keyboard_margin_top">12.0dp</dimen>
+    <dimen name="result_number_margin">3.0dp</dimen>
+    <dimen name="top_height">60.0dp</dimen>
+    <dimen name="top_marginTop">12.0dp</dimen>
+    <dimen name="typebox_height">60.0dp</dimen>
+    <dimen name="typebox_height_tnt">72.0dp</dimen>
+    <dimen name="typebox_margin_left">12.0dp</dimen>
+    <dimen name="typebox_margin_right">12.0dp</dimen>
+    <dimen name="typebox_width">696.0dp</dimen>
+</resources>

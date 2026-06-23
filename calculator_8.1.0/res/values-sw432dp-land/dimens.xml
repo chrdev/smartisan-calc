@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="controller_margin_bottom">18.0dp</dimen>
+    <dimen name="controller_padding_horizontal">5.3299866dp</dimen>
+    <dimen name="display_input_view_margin_left">0.0dp</dimen>
+    <dimen name="keyboard_margin_bottom">6.0dp</dimen>
+    <dimen name="keyboard_margin_left">10.799988dp</dimen>
+    <dimen name="keyboard_margin_right">10.799988dp</dimen>
+    <dimen name="keyboard_margin_top">14.399994dp</dimen>
+    <dimen name="top_marginTop">14.399994dp</dimen>
+    <dimen name="typebox_height">72.0dp</dimen>
+    <dimen name="typebox_margin_left">12.0dp</dimen>
+    <dimen name="typebox_margin_right">12.0dp</dimen>
+</resources>
