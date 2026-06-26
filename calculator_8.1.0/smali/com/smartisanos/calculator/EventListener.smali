@@ -123,7 +123,7 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method private clickViewId(I)V
     .locals 5
 
     iget-object v0, p0, Lcom/smartisanos/calculator/EventListener;->c:Lcom/smartisanos/calculator/ILogic;
@@ -139,15 +139,7 @@
     goto/16 :goto_3
 
     :cond_0
-    iget-object v0, p0, Lcom/smartisanos/calculator/EventListener;->c:Lcom/smartisanos/calculator/ILogic;
-
     const/4 v1, 0x0
-
-    invoke-interface {v0, v1}, Lcom/smartisanos/calculator/ILogic;->setClipMenuVisibility(Z)V
-
-    invoke-virtual {p1}, Landroid/view/View;->getId()I
-
-    move-result p1
 
     const-string v0, "0"
 
@@ -768,6 +760,17 @@
         0x7f050071 -> :sswitch_2
         0x7f050072 -> :sswitch_1
     .end sparse-switch
+.end method
+
+.method public onClick(Landroid/view/View;)V
+    .locals 0
+
+    invoke-virtual {p1}, Landroid/view/View;->getId()I
+    move-result p1
+
+    invoke-direct {p0, p1}, Lcom/smartisanos/calculator/EventListener;->clickViewId(I)V
+
+    return-void
 .end method
 
 .method public onDown(Landroid/view/MotionEvent;)Z
@@ -1431,8 +1434,8 @@
     goto :escape_loop
 .end method
 
-.method private static findViewByToken(Ljava/lang/String;)Landroid/view/View;
-    .locals 1
+.method private static findViewIdByToken(Ljava/lang/String;)I
+    .locals 0
 
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
     move-result p0
@@ -1440,19 +1443,10 @@
     sparse-switch p0, :switch_data_0
 
     :empty
-    const/4 v0, 0
-
-    :fin_0
-    return-object v0
+    const/4 p0, 0
 
     :ret_view
-    invoke-static {}, Lcom/smartisanos/calculator/Calculator;->getInstance()Lcom/smartisanos/calculator/Calculator;
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Lcom/smartisanos/calculator/Calculator;->findViewById(I)Landroid/view/View;
-    move-result-object v0
-
-    goto :fin_0
+    return p0
 
     :d0
     const p0, 0x7f05001e
@@ -1923,18 +1917,16 @@
     const/16 v5, 0x21 # '!' exclamation mark
     if-ne v4, v5, :find_view
 
-    invoke-direct {p0, v3}, Lcom/smartisanos/calculator/EventListener;->doCommand(Ljava/lang/String;)Z
-    move-result v4
-    if-eqz v4, :fin_0
-
-    goto :loop_start
+    invoke-direct {p0, v3}, Lcom/smartisanos/calculator/EventListener;->doCommand(Ljava/lang/String;)V
+    
+    goto :fin_0
 
     :find_view
-    invoke-static {v3}, Lcom/smartisanos/calculator/EventListener;->findViewByToken(Ljava/lang/String;)Landroid/view/View;
-    move-result-object v3
+    invoke-static {v3}, Lcom/smartisanos/calculator/EventListener;->findViewIdByToken(Ljava/lang/String;)I
+    move-result v3
     if-eqz v3, :fin_0
 
-    invoke-virtual {p0, v3}, Lcom/smartisanos/calculator/EventListener;->onClick(Landroid/view/View;)V
+    invoke-direct {p0, v3}, Lcom/smartisanos/calculator/EventListener;->clickViewId(I)V
 
     goto :loop_start
 
@@ -1992,9 +1984,7 @@
     return-void
 .end method
 
-.method private doCommand(Ljava/lang/String;)Z
-# If this function returns true, the caller may continue processing remaining tokens.
-# If this function returns false, the caller should stop processing further tokens.
+.method private doCommand(Ljava/lang/String;)V
     .locals 1
 
     const/4 v0, 1
@@ -2004,26 +1994,19 @@
 
     sparse-switch p1, :switch_data_0
 
-    :ret_false
-    const/4 v0, 0
+    return-void
 
-    :fin_0
-    return v0
-
-
-    # We must wait for the rotation to be finished to continue, that's some work. so we simply quit after rotation commands, for now.
     :l
     invoke-static {}, Lcom/smartisanos/calculator/EventListener;->setLandscape()V
-    goto :ret_false
+    return-void
 
     :p
     invoke-static {}, Lcom/smartisanos/calculator/EventListener;->setPortrait()V
-    goto :ret_false
+    return-void
 
     :r
     invoke-static {}, Lcom/smartisanos/calculator/EventListener;->rotate()V
-    goto :ret_false
-
+    return-void
 
     :d0
     const/4 p1, 0
@@ -2042,8 +2025,7 @@
 
     invoke-static {p0, p1}, Lcom/smartisanos/calculator/CommonUtils;->setVolume(Landroid/content/Context;I)V
 
-    goto :fin_0
-
+    return-void
 
     :h
     invoke-static {}, Lcom/smartisanos/calculator/CalculatorApp;->getInstance()Lcom/smartisanos/calculator/CalculatorApp;
@@ -2055,8 +2037,7 @@
 
     invoke-static {p0}, LUtil;->clipSetPlainText(Ljava/lang/String;)V
 
-    goto :fin_0
-
+    return-void
 
     :switch_data_0
     .sparse-switch
