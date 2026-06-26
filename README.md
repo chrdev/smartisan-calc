@@ -2,7 +2,7 @@
 
 Smartisan Calculator 8.1.0 Android APP MOD
 
-[English README](README_enu.md)
+[English README](README.enu.md)
 
 锤子计算器 基于 [SmartisanOS_APP_Port](https://github.com/People-11/SmartisanOS_APP_Port) 修改。
 
